@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ReactComponent as Logo } from "../assets/NextGameLogo.svg";
+import PrimaryButton from "./theme/PrimaryButton";
 import TextField from "./theme/TextField";
 
 interface Props {
@@ -18,7 +19,6 @@ export default function Registration({ onClick, title, className }: Props) {
       onSubmit={() => onClick(username, password)}
     >
       <Logo className="mx-auto w-[480px]" />
-      <hr className="!-mt-7 !mb-10 border-primary" />
       <label htmlFor="username" className="text-xl">
         Username:
       </label>
@@ -42,6 +42,9 @@ export default function Registration({ onClick, title, className }: Props) {
         id="password"
         required
       />
+      <div className="!mt-8 flex">
+        <PrimaryButton className="mx-auto text-xl">{title}</PrimaryButton>
+      </div>
     </form>
   );
 }
