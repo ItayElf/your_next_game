@@ -19,13 +19,13 @@ export default function Registration({ onClick, title, className }: Props) {
     setPassword("");
   };
 
-  const onClickWrapper = (e: React.FormEvent<HTMLFormElement>) => {
+  const onClickWrapper = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      onClick(username, password);
-    } catch (e) {
+      await onClick(username, password);
+    } catch (e: any) {
       resetInputs();
-      setError(e + "");
+      setError((e as Error).message);
     }
   };
 
