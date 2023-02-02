@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
       colors: {
@@ -22,9 +19,20 @@ module.exports = {
           900: "#db5a00",
         },
         error: "#cf6679",
-        surface: "#121212"
-      }
+        surface: {
+          DEFAULT: "#121212",
+          dp1: "#1d1d1d",
+          dp2: "#212121",
+          dp3: "#242424",
+          dp4: "#272727",
+          dp6: "#2c2c2c",
+          dp8: "#2d2d2d",
+          dp12: "#323232",
+          dp16: "#333333",
+          dp24: "#373737",
+        },
+      },
     },
   },
-  plugins: [require('prettier-plugin-tailwindcss')],
-}
+  plugins: [require("prettier-plugin-tailwindcss")],
+};
