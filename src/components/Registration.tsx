@@ -12,11 +12,27 @@ interface Props {
 export default function Registration({ onClick, title, className }: Props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const resetInputs = () => {
+    setUsername("");
+    setPassword("");
+  };
+
+  const onClickWrapper = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      onClick(username, password);
+    } catch (e) {
+      resetInputs();
+      setError(e + "");
+    }
+  };
 
   return (
     <form
       className={`w-[640px] space-y-2 rounded-lg bg-surface-dp1 p-4 ${className}`}
-      onSubmit={() => onClick(username, password)}
+      onSubmit={(e) => onClickWrapper(e)}
     >
       <Logo className="mx-auto w-[480px]" />
       <label htmlFor="username" className="text-xl">
@@ -42,6 +58,7 @@ export default function Registration({ onClick, title, className }: Props) {
         id="password"
         required
       />
+      {error && <p className="text-error">{error}</p>}
       <div className="!mt-8 flex">
         <PrimaryButton className="mx-auto text-xl">{title}</PrimaryButton>
       </div>
