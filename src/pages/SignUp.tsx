@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Registration from "../components/Registration";
 import { BASE_URL } from "../configuration";
 import { fetchPost } from "../Fetching";
 
 export default function SignUp() {
+  const navigate = useNavigate();
+
   const onSignUp = async (username: string, password: string) => {
     const url = BASE_URL + "signup";
     const result = await fetchPost(url, { username, password }).then(
@@ -11,6 +14,7 @@ export default function SignUp() {
     if (!result) {
       throw Error("Username is already taken");
     }
+    navigate("/");
   };
 
   return (

@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Registration from "../components/Registration";
 import { BASE_URL } from "../configuration";
 import { fetchPost } from "../Fetching";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const onLogin = async (username: string, password: string) => {
     const url = BASE_URL + "login";
     const result = await fetchPost(url, { username, password }).then(
@@ -11,6 +14,7 @@ export default function Login() {
     if (!result) {
       throw Error("Invalid username or password");
     }
+    navigate("/");
   };
 
   return (
