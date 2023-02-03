@@ -14,12 +14,13 @@ export default function Login() {
   };
 
   return (
-    <div className="">
+    <>
+      <div className="absolute inset-0 h-full w-full animate-pulse bg-dotted-spacing-8 bg-dotted-primary" />
       <Registration
         title="Login"
         onClick={onLogin}
-        className="mx-auto md:mt-16"
+        className="relative mx-auto md:mt-16"
       />
-    </div>
+    </>
   );
 }
