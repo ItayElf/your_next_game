@@ -29,7 +29,7 @@ export default function Login() {
       <Registration
         title="Login"
         onClick={onLogin}
-        className="relative sm:mx-auto sm:mt-16"
+        className="relative mt-16 sm:mx-auto"
       />
     </>
   );

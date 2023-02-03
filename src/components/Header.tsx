@@ -16,11 +16,19 @@ export default function Header() {
 
   return (
     <header className="flex h-16 w-full items-center justify-between bg-primary-accent p-4">
-      <div>
+      <div className="flex items-center space-x-8">
         <Link to={"/"}>
           <Logo className="hidden h-12 fill-black sm:inline" />
           <Icon className="inline h-12 fill-black sm:hidden" />
         </Link>
+        <div className="hidden p-1 font-bold text-black sm:inline">
+          <Link to={"/rate"} className="flex flex-col items-center">
+            <span className="material-symbols-outlined font-bold">
+              trending_up
+            </span>
+            <p>Rate</p>
+          </Link>
+        </div>
       </div>
       <div>
         {isLogged ? (

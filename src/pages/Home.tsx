@@ -4,6 +4,7 @@ import catalogue from "../assets/Home/catalogue.webp";
 import rating from "../assets/Home/rating.webp";
 import recommendations from "../assets/Home/recommendations.webp";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function App() {
   const [height, setHeight] = useState(0);
@@ -49,18 +50,20 @@ export default function App() {
             alt=""
             className="lg:clip-path-slash-reverse left-0 mb-6 h-64 w-full object-cover lg:absolute lg:h-[370px] lg:w-[40vw] lg:rounded-xl xl:h-[330px]"
           />
-          <div className="lg:w-1/2" />
+          <div className="hidden lg:block lg:w-1/2" />
           <div className="w-full space-y-8 p-2 lg:w-1/2">
             <h2 className="h4 sm:h2 text-primary-accent">
               Tell Us What You Like!
             </h2>
-            <p className="s1 sm:h6">
+            <p className="s1 sm:h6 !mb-8">
               The first step to know what will be your favorite game is to tell
               up what games you like! All you need to do is rate some games on a
               scale of 1 to 5 and we'll do the hard work, and recommend you
               games that suits your flavour.
             </p>
-            <PrimaryButton>Start Rating</PrimaryButton>
+            <Link to={"/rate"}>
+              <PrimaryButton>Start Rating</PrimaryButton>
+            </Link>
           </div>
         </div>
         <div className="relative mt-16 lg:mt-64 lg:flex">
