@@ -38,7 +38,7 @@ export default function Registration({ onClick, title, className }: Props) {
       className={`w-screen space-y-4 rounded-lg bg-surface-dp1 p-4 sm:w-[640px] ${className}`}
       onSubmit={(e) => onClickWrapper(e)}
     >
-      <Logo className="mx-auto max-w-xs sm:w-[480px]" />
+      <Logo className="mx-auto mb-4 max-w-xs fill-primary-accent sm:w-[480px] sm:max-w-none" />
       <label htmlFor="username" className="text-xl">
         Username:
       </label>

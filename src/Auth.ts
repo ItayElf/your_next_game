@@ -10,6 +10,11 @@ export const saveUser = (username: string, password: string) => {
   localStorage.setItem("user", JSON.stringify(user));
 };
 
+export const logOutUser = () => {
+  localStorage.removeItem("user");
+  user = null;
+};
+
 export const loadUser = () => {
   try {
     user = JSON.parse(localStorage.getItem("user") ?? "");
@@ -22,3 +27,5 @@ export const loadUser = () => {
 export const isLoggedIn = () => {
   return user != null;
 };
+
+export const getUser = () => user;
