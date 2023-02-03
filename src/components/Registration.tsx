@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ReactComponent as Logo } from "../assets/NextGameLogo.svg";
+import Loading from "./theme/Loading";
 import PrimaryButton from "./theme/PrimaryButton";
 import TextField from "./theme/TextField";
 
@@ -13,6 +14,7 @@ export default function Registration({ onClick, title, className }: Props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const resetInputs = () => {
     setUsername("");
@@ -21,12 +23,14 @@ export default function Registration({ onClick, title, className }: Props) {
 
   const onClickWrapper = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await onClick(username, password);
     } catch (e: any) {
       resetInputs();
       setError((e as Error).message);
     }
+    setLoading(false);
   };
 
   return (
@@ -60,7 +64,11 @@ export default function Registration({ onClick, title, className }: Props) {
       />
       {error && <p className="text-error">{error}</p>}
       <div className="!mt-8 flex">
-        <PrimaryButton className="mx-auto text-xl">{title}</PrimaryButton>
+        {loading ? (
+          <Loading className="mx-auto h-16 w-16 border-[6px]" />
+        ) : (
+          <PrimaryButton className="mx-auto text-xl">{title}</PrimaryButton>
+        )}
       </div>
     </form>
   );
