@@ -9,3 +9,56 @@
         font-family: 'Roboto', sans-serif;
       }
 }
+
+@layer components {
+  .h1 {
+    @apply font-[roboto] text-8xl font-light -tracking-[1.5px];
+  }
+  .h2 {
+    @apply font-[roboto] text-6xl font-light -tracking-[0.5px];
+  }
+  .h3 {
+    @apply font-[roboto] text-5xl;
+  }
+  .h4 {
+    @apply font-[roboto] text-4xl tracking-[0.25px];
+  }
+  .h5 {
+    @apply font-[roboto] text-2xl;
+  }
+  .h6 {
+    @apply font-[roboto] text-xl tracking-[0.15px];
+  }
+  .s1 {
+    @apply font-[roboto] text-base tracking-[0.15px];
+  }
+  .s2 {
+    @apply font-[roboto] text-sm tracking-[0.1px];
+  }
+  .b1 {
+    @apply font-[roboto] text-base tracking-[0.5px];
+  }
+  .b2 {
+    @apply font-[roboto] text-sm tracking-[0.25px];
+  }
+  .button {
+    @apply font-[roboto] font-medium uppercase tracking-[1.25px];
+  }
+  .caption {
+    @apply font-[roboto] text-xs tracking-[0.4px];
+  }
+  .overline {
+    @apply font-[roboto] text-xs uppercase tracking-[1.5px];
+  }
+}
+
+@layer utilities {
+  .clip-path-slash {
+    clip-path: polygon(15rem 0, 100% 0, 100% 100%, 0 100%);
+    shape-outside: polygon(3rem 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .clip-path-slash-reverse {
+    clip-path: polygon(0 0, calc(100% - 15rem) 0, 100% 100%, 0 100%);
+    shape-outside: polygon(3rem 0, 100% 0, 100% 100%, 0 100%);
+  }
+}

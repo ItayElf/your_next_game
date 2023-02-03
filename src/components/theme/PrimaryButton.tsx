@@ -9,7 +9,7 @@ export default function PrimaryButton({ children, className, onClick }: Props) {
     <button
       onClick={onClick}
       className={
-        "rounded bg-primary-accent px-5 py-2 hover:bg-primary-500" +
+        "rounded bg-primary-accent px-5 py-2 font-bold text-black hover:bg-primary-500" +
         " " +
         className
       }
