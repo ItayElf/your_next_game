@@ -4,10 +4,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import router from "./Routing";
+import { loadUser } from "./Auth";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+loadUser();
 
 root.render(
   <React.StrictMode>

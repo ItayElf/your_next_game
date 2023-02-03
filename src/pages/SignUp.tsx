@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { isLoggedIn, saveUser } from "../Auth";
 import Registration from "../components/Registration";
 import { BASE_URL } from "../configuration";
 import { fetchPost } from "../Fetching";
@@ -14,8 +15,13 @@ export default function SignUp() {
     if (!result) {
       throw Error("Username is already taken");
     }
+    saveUser(username, password);
     navigate("/");
   };
+
+  if (isLoggedIn()) {
+    return <Navigate replace to={"/"} />;
+  }
 
   return (
     <>
