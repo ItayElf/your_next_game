@@ -15,11 +15,11 @@ export default function Login() {
 
   return (
     <>
-      <div className="absolute inset-0 h-full w-full animate-pulse bg-dotted-spacing-8 bg-dotted-primary" />
+      <div className="absolute inset-0 h-full w-full bg-dotted-spacing-8 bg-dotted-primary-100 sm:animate-pulse sm:bg-dotted-primary" />
       <Registration
         title="Login"
         onClick={onLogin}
-        className="relative mx-auto md:mt-16"
+        className="relative sm:mx-auto sm:mt-16"
       />
     </>
   );

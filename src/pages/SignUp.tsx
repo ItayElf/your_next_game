@@ -15,7 +15,7 @@ export default function SignUp() {
 
   return (
     <>
-      <div className="absolute inset-0 h-full w-full animate-pulse bg-dotted-spacing-8 bg-dotted-primary" />
+      <div className="absolute inset-0 h-full w-full bg-dotted-spacing-8 bg-dotted-primary-100 sm:animate-pulse sm:bg-dotted-primary" />
       <Registration
         title="Sign Up"
         onClick={onSignUp}
