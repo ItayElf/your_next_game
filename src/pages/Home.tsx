@@ -35,13 +35,15 @@ export default function App() {
           />
           <div className="space-y-8 p-2 lg:w-1/2">
             <h1 className="h4 sm:h2 text-primary-accent">Your Next Game!</h1>
-            <p className="s1 sm:h6">
+            <p className="s1 sm:h6 !mb-8">
               Your Next Game is a website that helps you find the next game to
               play based on your previous liked games. You tell us which game
               you like and which you don't and we'll suggest you the very next
               game you should play!
             </p>
-            <PrimaryButton className="h6">Let's start!</PrimaryButton>
+            <Link to={"/rate"}>
+              <PrimaryButton className="h6">Let's start!</PrimaryButton>
+            </Link>
           </div>
         </div>
         <div className="relative mt-16 lg:mt-64 lg:flex">

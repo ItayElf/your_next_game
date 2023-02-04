@@ -21,9 +21,9 @@ export default function Header() {
           <Logo className="hidden h-12 fill-black sm:inline" />
           <Icon className="inline h-12 fill-black sm:hidden" />
         </Link>
-        <div className="hidden p-1 font-bold text-black sm:inline">
+        <div className="p-1 text-black sm:font-bold">
           <Link to={"/rate"} className="flex flex-col items-center">
-            <span className="material-symbols-outlined font-bold">
+            <span className="material-symbols-outlined sm:font-bold">
               trending_up
             </span>
             <p>Rate</p>
@@ -33,7 +33,7 @@ export default function Header() {
       <div>
         {isLogged ? (
           <div className="flex items-center space-x-4 font-bold text-black sm:text-lg">
-            <p className="block">Welcome, {user?.username}!</p>
+            <p className="hidden sm:block">Welcome, {user?.username}!</p>
             <PrimaryButton
               onClick={onLogOut}
               className="hidden bg-primary text-black sm:inline"

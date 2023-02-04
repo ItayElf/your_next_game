@@ -59,7 +59,7 @@ export default function Rate() {
       <Header />
       <div className="absolute inset-0 -z-50 mt-20 block w-full bg-dotted-spacing-8 bg-dotted-primary-100 sm:animate-pulse sm:bg-dotted-primary" />
       <div className="z-10 -mt-20 flex h-screen w-full items-center justify-center">
-        <div className="bg-surface-dp1 p-4">
+        <div className="w-full bg-surface-dp1 p-4 sm:w-[640px]">
           <GameRater key={game} game={game} onRate={onRate} />
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function GameRater({ game, onRate }: Props) {
   const [played, setPlayed] = useState(false);
 
   return (
-    <div className="flex min-w-[640px] flex-col items-center space-y-4">
+    <div className="flex flex-col items-center space-y-4">
       {!didImageLoaded && <Loading />}
       <img
         src={`${BASE_URL}image/${game}`}
@@ -21,12 +21,12 @@ export default function GameRater({ game, onRate }: Props) {
         onLoad={() => setDidImageLoaded(true)}
         className="grow-load"
       />
-      <h1 className="h4 grow-load text-primary">{game}</h1>
+      <h1 className="h5 sm:h4 grow-load text-center text-primary">{game}</h1>
       <hr className="grow-load w-full border-primary" />
       {played ? (
         <RateIcons game={game} onRate={onRate} />
       ) : (
-        <div className="flex w-full justify-evenly text-2xl">
+        <div className="flex w-full justify-evenly text-lg sm:text-2xl">
           <PrimaryButton
             onClick={() => onRate(null)}
             className="grow-load bg-primary transition-all hover:scale-110 hover:bg-primary-200"
@@ -49,27 +49,27 @@ const RateIcons = ({ onRate }: Props) => {
   return (
     <div className="flex w-full justify-evenly">
       <button onClick={() => onRate(1)} className="grow-load">
-        <span className="material-symbols-outlined spin-load text-6xl text-primary-900 transition-all hover:scale-125">
+        <span className="material-symbols-outlined spin-load text-5xl  sm:text-6xl text-primary-900 transition-all hover:scale-125">
           sentiment_very_dissatisfied
         </span>
       </button>
       <button onClick={() => onRate(2)} className="grow-load">
-        <span className="material-symbols-outlined spin-load text-6xl text-primary-700 transition-all hover:scale-125">
+        <span className="material-symbols-outlined spin-load text-5xl  sm:text-6xl text-primary-700 transition-all hover:scale-125">
           sentiment_dissatisfied
         </span>
       </button>
       <button onClick={() => onRate(3)} className="grow-load">
-        <span className="material-symbols-outlined spin-load text-6xl text-primary-500 transition-all hover:scale-125">
+        <span className="material-symbols-outlined spin-load text-5xl  sm:text-6xl text-primary-500 transition-all hover:scale-125">
           sentiment_neutral
         </span>
       </button>
       <button onClick={() => onRate(4)} className="grow-load">
-        <span className="material-symbols-outlined spin-load text-6xl text-primary-300 transition-all hover:scale-125">
+        <span className="material-symbols-outlined spin-load text-5xl  sm:text-6xl text-primary-300 transition-all hover:scale-125">
           mood
         </span>
       </button>
       <button onClick={() => onRate(5)} className="grow-load">
-        <span className="material-symbols-outlined spin-load text-6xl text-primary-100 transition-all hover:scale-125">
+        <span className="material-symbols-outlined spin-load text-5xl  sm:text-6xl text-primary-100 transition-all hover:scale-125">
           sentiment_very_satisfied
         </span>
       </button>
